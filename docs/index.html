@@ -2,9 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>md-keylol</title>
+    <link rel="xstyle-name" href="md-keylol">
+    <link rel="xstyle-id-url" href="md-keylol">
+    <link rel="xstyle-md5-url" href="12345">
+    <link rel="xstyle-code" href="./user.less">
+    <script>
+        function xstyleInstall(name, code, md5, id) {
+            setXstyleMeta('xstyle-name', name)
+            setXstyleMeta('xstyle-code', code)
+            setXstyleMeta('xstyle-id-url', id)
+            setXstyleMeta('xstyle-md5-url', md5)
+            const newEvent = new CustomEvent('xstyleInstall', {detail: null})
+            document.dispatchEvent(newEvent)
+        }
+
+        function setXstyleMeta(rel, value) {
+            if (!value) {
+                return
+            }
+            document.querySelector(`link[rel="${rel}"]`).setAttribute('href', value)
+        }
+    </script>
 </head>
 <body>
-<h1>hello world!</h1>
+<h1>md-keylol</h1>
+<button onclick="xstyleInstall()">Xstyle Install</button>
 </body>
 </html>
