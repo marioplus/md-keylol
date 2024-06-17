@@ -7,16 +7,16 @@
     <link rel="xstyle-id-url" href="https://marioplus.github.io/md-keylol/">
     <link rel="xstyle-md5-url">
     <link rel="xstyle-code" href="style/md-keylol.less">
-	<!-- baidu统计：tongji.baidu.com -->
-	<script>
-        var _hmt = _hmt || [];
+    <script>
+        // 百度统计：tongji.baidu.com
+        const _hmt = _hmt || [];
         (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?00282fc0f41d5efc3f9f81c36fd56329";
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
-        })();
-    </script>        
+            const hm = document.createElement('script')
+            hm.src = 'https://hm.baidu.com/hm.js?00282fc0f41d5efc3f9f81c36fd56329'
+            const s = document.getElementsByTagName('script')[0]
+            s.parentNode.insertBefore(hm, s)
+        })()
+    </script>
     <script>
         function xstyleInstall(name, code, id, md5) {
             id = id || 'https://marioplus.github.io/md-keylol/?' + name
@@ -41,7 +41,29 @@
 <p>这是一份为论坛带来md风格的样式，详情查看<a href="https://github.com/marioplus/MDSteamCN">此处</a></p>
 <button onclick="xstyleInstall('Md其乐','style/md-keylol.less',)">xStyle Install</button>
 <h1>Md其乐（黑暗模式）</h1>
-<p><a href="https://github.com/marioplus/MDSteamCN">Md其乐</a>的黑暗模式拓展，需要先安装MD其乐。详情查看<a href="https://github.com/marioplus/MDSteamCN/tree/dark">此处</a></p>
+<p><a href="https://github.com/marioplus/MDSteamCN">Md其乐</a>的黑暗模式拓展，需要先安装并启用MD其乐。详情查看<a href="https://github.com/marioplus/MDSteamCN/tree/dark">此处</a></p>
 <button onclick="xstyleInstall('Md其乐（黑暗模式）','style/md-keylol-dark.less',)">xStyle Install</button>
+<h1>更新说明</h1>
+<div id="change-log"></div>
 </body>
+<script type="text/javascript">
+    const changeLogs = {
+        '2024-06-17': ['feat: 适配首页steam 监控新增加的背景色']
+    }
+    const changeLogEl = document.getElementById('change-log')
+    Object.entries(changeLogs).forEach(([date, changes]) => {
+        const dateEl = document.createElement('h2')
+        dateEl.innerText = date
+
+        const changesEl = document.createElement('ul')
+        for (let change of changes) {
+            const changeEl = document.createElement('li')
+            changeEl.innerText = change
+            changesEl.appendChild(changeEl)
+        }
+
+        changeLogEl.appendChild(dateEl)
+        changeLogEl.appendChild(changesEl)
+    })
+</script>
 </html>
